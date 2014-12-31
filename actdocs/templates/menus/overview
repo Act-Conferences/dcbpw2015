@@ -4,7 +4,7 @@
 [% WRAPPER menus/item %]
   <a href="[% make_uri('dcbpw.ics') %]">
     <span class="icon"><img src="[% make_uri('calendar-icon.png') %]"></span>
-    When: Sat-Sun, May 3-4, 2014
+    When: Sat-Sun, April 11-12, 2015
   </a>
 [% END %]
 [% WRAPPER menus/item %]
