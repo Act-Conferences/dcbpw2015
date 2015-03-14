@@ -57,7 +57,7 @@
 
     [%- IF t.user.bio.keys.size %]
       [% FOREACH lang = t.user.bio.keys %]
-        [%- IF t.user.bio.$lang.size %]
+        [%- IF t.user.bio.$lang.size > 1 %]
           <i><b>Speaker Bio ([% t.user.bio.$lang.size %]):</b>
             [% t.user.bio.$lang | replace('\n', '<br />') %]
           </i>
