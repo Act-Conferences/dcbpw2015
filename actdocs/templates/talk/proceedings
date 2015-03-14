@@ -24,9 +24,9 @@
 
     <p>
       [%- IF t.user.photo_name %]
-        <img src="/[% global.config.general_dir_photos %]/[% t.user.photo_name %]" border="0" alt="Photo" align=right style="margin-left: 1em; max-width: 200px; max-height: 200px;">
+        <img src="/[% global.config.general_dir_photos %]/[% t.user.photo_name %]" border="0" alt="Photo" align=right style="margin-left: 1em; width: 200px">
       [%- ELSE %]
-        <img src="http://www.gravatar.com/avatar/[% t.user.md5_email %]?s=200&d=retro" border="0" alt="Photo" align=right style="margin-left: 1em; max-width: 200px; max-height: 200px;">
+        <img src="http://www.gravatar.com/avatar/[% t.user.md5_email %]?s=200&d=blank" border="0" alt="Photo" align=right style="margin-left: 1em; width: 200px">
       [% END %]
       [% user_info(t.user) %]
       -
