@@ -61,6 +61,11 @@
           <i><b>Speaker Bio ([% t.user.bio.$lang.0.size %]):</b>
             [% t.user.bio.$lang | replace('\n', '<br />') %]
           </i>
+        [% ELSE %]
+          lang: [% labg %]<br>
+          All: [% t.user.bio.$lang %]<br>
+          Zero: [% t.user.bio.$lang.0 %]<br>
+          Zero size: [% t.uer.bio.$lang.0.size %]
         [% END %]
       [% END %]
     [% END %]
