@@ -4,7 +4,7 @@
   [% INCLUDE js/mytalks.js %]
 
   [% FOREACH t = talks.sort('title') %]
-          
+
     <h2 style="clear: right">
       [% IF global.request.user.has_registered %]
       <input type="checkbox"
@@ -24,9 +24,9 @@
 
     <p>
       [%- IF t.user.photo_name %]
-        <img src="/[% global.config.general_dir_photos %]/[% t.user.photo_name %]" border="0" alt="Photo" align=right style="margin-left: 1em; width: 200px">
+        <img src="/[% global.config.general_dir_photos %]/[% t.user.photo_name %]" border="0" alt="Photo" align=right style="margin-left: 1em; max-width: 200px; max-height: 200px;">
       [%- ELSE %]
-        <img src="http://www.gravatar.com/avatar/[% t.user.md5_email %]?s=100&d=404" border="0" alt="Photo" align=right style="margin-left: 1em; width: 200px">
+        <img src="http://www.gravatar.com/avatar/[% t.user.md5_email %]?s=200&d=retro" border="0" alt="Photo" align=right style="margin-left: 1em; max-width: 200px; max-height: 200px;">
       [% END %]
       [% user_info(t.user) %]
       -
@@ -57,16 +57,18 @@
 
     [%- IF t.user.bio.keys.size %]
       [% FOREACH lang = t.user.bio.keys %]
-        <i><b>Speaker Bio:</b>
-          [% t.user.bio.$lang | replace('\n', '<br />') %]
-        </i>
+        [%- IF t.user.bio.$lang.size %]
+          <i><b>Speaker Bio:</b>
+            [% t.user.bio.$lang | replace('\n', '<br />') %]
+          </i>
+        [% END %]
       [% END %]
     [% END %]
 
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-      
+
   [% END %]
- 
+
 
 [% END %]
